@@ -47,17 +47,21 @@
   - https://stackoverflow.com/a/52496820/1532919
   - optional
   - blueprint for building an image. eg install debian, php, mysql, pdo, imagemagick, copy in these files
+  - It defines your app's environment so it can be reproduced anywhere.
   - so Dockerfile installs the dependecies/services, docker-compose.yml configures them and makes them communicate with each other...?
   - useful for deployment
   - i believe Dockerfile creates an image, then you consume it in `docker-compose.yml` with `build: .`. If images already exist in the docker registry, just use it
   - whenever you change, you have to delete and re-create the images and containers
 
   - example:
+
+```
     FROM apache:8.16.2          // must be based off a single image. this one installs a specific version of apache
     ENV DB_USERNAME=admin \     // can set up environment variables
         DB_PASSWORD=password
     RUN mkdir /my/path          // run any linux command WITHIN the container
     COPY . /my/path             // "COPY" copies from HOST machine into the container
     CMD ["node", "server.js"]   // entrypoint command; only one can exist. runs "node server.js" at command line in container
+```
 
-`docker build -t my-app .`       Builds an image called `my-app` from a `Dockerfile` (which is in current directory).  It defines your app's environment so it can be reproduced anywhere.
+`docker build -t my-app .`       Builds an image called `my-app` from a `Dockerfile` (which is in current directory).  
