@@ -37,8 +37,9 @@
 `docker network ls`              List the docker networks
 
 
-`docker compose up`              Start all the containers defined in docker-compose.yml (so dont have to run one for each service). It automatically creates the docker network, so we dont have to do it manually.
-`docker compose down`            Stop all the containers defined in docker-compose.yml and the network.
+`docker-compose up`              Start all the containers defined in docker-compose.yml (so dont have to run one for each service). It automatically creates the docker network, so we dont have to do it manually.
+`docker-compose down`            Stop all the containers defined in docker-compose.yml and the network.
+`docker-compose run`             ...
 
 ````
 
