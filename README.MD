@@ -1,3 +1,5 @@
+Followed this tutorial: https://www.youtube.com/watch?v=3c-iBn73dDE
+
 ## image
   - a bundle of an app's dependencies (apache, sql, redis, etc) and configuration
   - made up of layers of other images (linux image, then applications (sql image, php image, etc))
